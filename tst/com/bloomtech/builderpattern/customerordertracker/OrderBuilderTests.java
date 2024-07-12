@@ -20,7 +20,7 @@ public class OrderBuilderTests {
                 .withItem(Item.GYM_WEAR)
                 .withShippingAddress("123 Street")
                 .withBillingAddress("456 Street")
-                .withCustomername("test customer")
+                .withCustomerName("test customer")
                 .withCustomerEmail("tc@email.com")
                 .withAffiliateCode("1234")
                 .withQuantity(2)
@@ -44,7 +44,7 @@ public class OrderBuilderTests {
         Order order = Order.builder()
                 .withItem(Item.GYM_WEAR)
                 .withShippingAddress(shippingAddress)
-                .withCustomername("test customer")
+                .withCustomerName("test customer")
                 .build();
 
         //Assert that the billing address will default to the shipping address if not provided
@@ -63,7 +63,7 @@ public class OrderBuilderTests {
         //Assert that a runtime exception occurs if an com.bloomtech.builderpattern.com.bloomtech.builderpattern.customerordertracker.Order is instantiated without required fields
         assertThrows(RuntimeException.class, ()->{
             Order order = Order.builder()
-                    .withCustomername("just a name")
+                    .withCustomerName("just a name")
                     .build();
         });
     }
